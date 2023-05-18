@@ -1,0 +1,20 @@
+*,
+::before,
+::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-clr: #301467;
+    --card-clr: #5f27cd;
+    --box-clr: #12CBC4;
+    --txt-clr: #ddfff7;
+}
+
+html {
+    background-color: var(--bg-clr);
+    color: var(--txt-clr);
+    font-family: "Open Sans", sans-serif;
+}

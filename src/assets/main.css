@@ -1,0 +1,13 @@
+@import url("./base.css");
+
+body {
+    display: flex;
+    place-items: center;
+}
+
+#app {
+    display: block;
+    position: relative;
+    margin: auto;
+    padding: auto;
+}
