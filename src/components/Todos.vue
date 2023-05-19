@@ -20,23 +20,43 @@ export default defineComponent({
 </script>
 
 <template>
-    <div>
+    <div id="list">
         <h2>TODOLIST</h2>
+        <hr>
         <ul>
             <li v-bind:key=todo.id v-for="todo in todos">
                 <Todo :todo=todo @delete-todo="$emit('delete-todo', todo.id)" />
+                <hr>
             </li>
         </ul>
     </div>
 </template>
 
 <style>
+    #list {
+        position: relative;
+        top: 0;
+        margin-top: 0;
+    }
+
     h2 {
-        margin-bottom: 10px;
+        margin-bottom: 1em;
         text-align: center;
     }
 
     ul {
+        padding: 0;
+        width:auto;
         list-style-type: none;
+        margin-left: 0;
+    }
+
+    ul li {
+        margin-left: 1em;
+    }
+
+    ul hr {
+        position: relative;
+        margin-left: 0;
     }
 </style>

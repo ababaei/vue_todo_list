@@ -44,6 +44,8 @@ export default defineComponent ({
 
 <style>
     .btn {
+      margin-left: 5px;
+      width:  20px;
       background: #5f27cd;
       border-radius: 5px;
       color: #ddfff7;
@@ -51,6 +53,10 @@ export default defineComponent ({
     }
 
     #app {
+      border-radius: 25px;
+      background-color: #5f27cd;
+      width: 25vw;
+      height: 80vw;
       margin-top: 3vw;
     }
 </style>

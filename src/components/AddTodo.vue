@@ -43,5 +43,8 @@ export default defineComponent({
     </div>
 </template>
 
-<style>
+<style scoped>
+    div {
+        place-items: center;
+    }
 </style>
