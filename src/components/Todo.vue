@@ -32,4 +32,10 @@ export default defineComponent({
     .completed {
         text-decoration: line-through;
     }
+
+    div {
+        word-break: break-all;
+        text-align: justify;
+        margin: 0 1em;
+    }
 </style>

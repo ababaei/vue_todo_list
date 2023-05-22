@@ -36,7 +36,7 @@ export default defineComponent ({
 </script>
 
 <template>
-  <div id="app">
+  <div id="todolist">
     <Todos :todos="todos" @delete-todo="deleteTodo" />
     <AddTodo :todosLen=todos.length @add-todo="addTodo" />
   </div>
@@ -53,10 +53,13 @@ export default defineComponent ({
     }
 
     #app {
+      /* display: flex;
+      justify-content: center; */
       border-radius: 25px;
       background-color: #5f27cd;
       width: 25vw;
-      height: 80vw;
-      margin-top: 3vw;
-    }
+      height: 80vh;
+      /* margin: 10vh 0; */
+      /* margin-top: 3vw; */
+    }  
 </style>

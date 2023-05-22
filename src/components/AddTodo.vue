@@ -44,7 +44,17 @@ export default defineComponent({
 </template>
 
 <style scoped>
-    div {
-        place-items: center;
+    form {
+        display:flex;
+        justify-content:center;        
+        width: 100%;
+    }
+
+    input {
+        width: 83%;
+    }
+
+    button {
+        width: 7%;
     }
 </style>

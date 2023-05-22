@@ -52,11 +52,6 @@ export default defineComponent({
     }
 
     ul li {
-        margin-left: 1em;
-    }
-
-    ul hr {
-        position: relative;
         margin-left: 0;
     }
 </style>
