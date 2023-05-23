@@ -37,8 +37,8 @@ export default defineComponent({
 <template>
     <div>
         <form @submit="addTodo">
-            <input type="text" v-model="title" name="title" required>
-            <button class="btn" type="submit">+</button>
+            <input type="text" v-model="title" name="title" placeholder="Add a new task" required>
+            <button class="btn" type="submit">Add</button>
         </form>
     </div>
 </template>
@@ -48,13 +48,25 @@ export default defineComponent({
         display:flex;
         justify-content:center;        
         width: 100%;
+        gap: 2%;
     }
 
     input {
-        width: 83%;
+        padding-left: 1em;
+        border-radius: 8px;
+        margin: 1em 0;
+        width: 80%;
     }
 
     button {
+        font-weight: bold;
         width: 7%;
+        margin: 1em 0;
+        border-radius: 10px;
+        transition: all 0.5s linear;
+    }
+
+    button:hover {
+        background-color: var(--bg-clr);
     }
 </style>

@@ -3,6 +3,7 @@ import { defineComponent } from "vue"
 import Todos from "./components/Todos.vue"
 import AddTodo from "./components/AddTodo.vue"
 
+
 interface Todo {
   id: Number
   title: String
@@ -17,16 +18,16 @@ export default defineComponent ({
   },
   data() {
     return {
-      test: "salam",
       todos: [] as Todo[]
     }
   },
   methods: {
     addTodo(newTodoObj: Todo) {
+      console.log("Add: " + newTodoObj.id);
       this.todos = [...this.todos, newTodoObj];
     },
     deleteTodo(id: Number) {
-      console.log(id);
+      console.log("delete: " + id);
       var index = this.todos.map(x => {return x.id;}).indexOf(id)
       this.todos.splice(index, 1);
     }
@@ -46,8 +47,9 @@ export default defineComponent ({
     .btn {
       margin-left: 5px;
       width:  20px;
-      background: #5f27cd;
-      border-radius: 5px;
+      background: none;
+      border: none;
+      /* border-radius: 5px; */
       color: #ddfff7;
       font-weight: bold;
     }
@@ -57,9 +59,29 @@ export default defineComponent ({
       justify-content: center; */
       border-radius: 25px;
       background-color: #5f27cd;
-      width: 25vw;
-      height: 80vh;
-      /* margin: 10vh 0; */
-      /* margin-top: 3vw; */
-    }  
+      width: 35vw;
+      min-height: 80vh;
+      height: fit-content;
+      /* padding-bottom: 2vh; */
+      min-width: 319px;
+      box-shadow: 5px 5px 20px black;
+    }
+
+    h1 {
+      display: none;
+    }
+
+    @media (max-width: 1080px) {
+      #app {
+        width: 45vw;
+      }
+    }
+    
+    @media (max-width: 319px) {
+      #app {
+        display: none;
+      }
+
+
+    }
 </style>
