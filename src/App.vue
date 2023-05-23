@@ -3,11 +3,11 @@ import { defineComponent } from "vue"
 import Todos from "./components/Todos.vue"
 import AddTodo from "./components/AddTodo.vue"
 
-
 interface Todo {
-  id: Number
+  id: String
   title: String
-  conpleted: Boolean
+  completed: Boolean
+  edit: Boolean
 }
 
 export default defineComponent ({
@@ -26,7 +26,7 @@ export default defineComponent ({
       console.log("Add: " + newTodoObj.id);
       this.todos = [...this.todos, newTodoObj];
     },
-    deleteTodo(id: Number) {
+    deleteTodo(id: String) {
       console.log("delete: " + id);
       var index = this.todos.map(x => {return x.id;}).indexOf(id)
       this.todos.splice(index, 1);
@@ -39,7 +39,7 @@ export default defineComponent ({
 <template>
   <div id="todolist">
     <Todos :todos="todos" @delete-todo="deleteTodo" />
-    <AddTodo :todosLen=todos.length @add-todo="addTodo" />
+    <AddTodo @add-todo="addTodo" />
   </div>
 </template>
 
@@ -65,10 +65,6 @@ export default defineComponent ({
       /* padding-bottom: 2vh; */
       min-width: 319px;
       box-shadow: 5px 5px 20px black;
-    }
-
-    h1 {
-      display: none;
     }
 
     @media (max-width: 1080px) {

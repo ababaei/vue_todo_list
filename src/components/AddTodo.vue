@@ -1,33 +1,28 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
+import { v4 as uuid } from 'uuid';
 // import uuid from 'uuid';
 
 export default defineComponent({
     name: "AddTodo",
+    emits: ["add-todo"],
     data() {
         return {
             title: ""
         }
     },
-    emits: ["add-todo"],
     methods: {
         addTodo(e: Event) {
             e.preventDefault();
 
             const newTodoObj: Object = {
-                id: this.todosLen + 1,
+                id: uuid(),
                 title: this.title,
                 completed: false
             }
 
             this.$emit('add-todo', newTodoObj);
             this.title = '';
-        }
-    },
-    props: {
-        todosLen: {
-            type: Number,
-            required: true
         }
     }
 })
@@ -46,7 +41,7 @@ export default defineComponent({
 <style scoped>
     form {
         display:flex;
-        justify-content:center;        
+        justify-content:center;
         width: 100%;
         gap: 2%;
     }
@@ -63,10 +58,11 @@ export default defineComponent({
         width: 7%;
         margin: 1em 0;
         border-radius: 10px;
-        transition: all 0.5s linear;
+        transition: all 0.2s ease-in-out;
     }
 
     button:hover {
         background-color: var(--bg-clr);
+        cursor:pointer;
     }
 </style>
