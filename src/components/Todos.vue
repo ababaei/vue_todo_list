@@ -5,7 +5,7 @@ import Todo from "./Todo.vue"
 
 export default defineComponent({
     name: "Todos",
-    emits: ["delete-todo"],
+    emits: ["delete-todo", "edit-task"],
     components: {
         Todo
     },
@@ -25,7 +25,10 @@ export default defineComponent({
         <ul>
             <hr>
             <li v-bind:key=todo.id v-for="todo in todos">
-                <Todo :todo=todo @delete-todo="$emit('delete-todo', todo.id)" />
+                <Todo :todo=todo
+                    @delete-todo="$emit('delete-todo', todo.id)"
+                    @edit-task="$emit('edit-task', todo.id, $event)"
+                />
                 <hr>
             </li>
         </ul>

@@ -28,8 +28,12 @@ export default defineComponent ({
     },
     deleteTodo(id: String) {
       console.log("delete: " + id);
-      var index = this.todos.map(x => {return x.id;}).indexOf(id)
+      const index = this.todos.map(x => {return x.id;}).indexOf(id)
       this.todos.splice(index, 1);
+    },
+    editTodo(id: String, newTitle: String) {
+      const index = this.todos.map(x => {return x.id;}).indexOf(id);
+      this.todos[index].title = newTitle;
     }
   }
 });
@@ -38,7 +42,10 @@ export default defineComponent ({
 
 <template>
   <div id="todolist">
-    <Todos :todos="todos" @delete-todo="deleteTodo" />
+    <Todos :todos="todos"
+      @delete-todo="deleteTodo"
+      @edit-task="editTodo"
+    />
     <AddTodo @add-todo="addTodo" />
   </div>
 </template>
