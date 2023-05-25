@@ -19,7 +19,6 @@ export default defineComponent({
             this.todo.completed = !this.todo.completed;
         },
         editTask() {
-            console.log(this.todo.completed)
             this.todo.edit = !this.todo.edit;
         },
         taskEdited(newTitle: String) {

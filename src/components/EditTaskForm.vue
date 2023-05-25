@@ -39,7 +39,7 @@ export default defineComponent({
 <template>
     <form @submit.prevent="onSubmit">
         <div>
-            <input :id="id" type="text" v-model.lazy.trim="newTitle">
+            <input :id="id" type="text" v-model.lazy.trim="newTitle" autofocus> 
             <button type="submit" class="btn"><img src="../assets/check-circle-fill.svg"></button>
             <button type="button" class="btn" @click="onCancel"><img src="../assets/x-circle-fill.svg"></button>
         </div>

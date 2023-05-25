@@ -36,11 +36,6 @@ export default defineComponent({
 </template>
 
 <style>
-    /* #list {
-        position: relative;
-        top: 0;
-        margin-top: 0;
-    } */
     hr {
         opacity: 50%;
         border: 1.2px dashed var(--txt-clr);
@@ -63,8 +58,4 @@ export default defineComponent({
     ul li {
         margin-left: 0;
     }
-
-    /* hr:first-of-type {
-        margin: 0;
-    } */
 </style>

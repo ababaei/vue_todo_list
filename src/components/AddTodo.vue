@@ -1,7 +1,6 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import { v4 as uuid } from 'uuid';
-// import uuid from 'uuid';
 
 export default defineComponent({
     name: "AddTodo",

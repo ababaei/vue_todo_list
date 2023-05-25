@@ -35,6 +35,19 @@ export default defineComponent ({
       const index = this.todos.map(x => {return x.id;}).indexOf(id);
       this.todos[index].title = newTitle;
     }
+  },
+  mounted() {
+      const item: string | null = localStorage.getItem("todos"); 
+      if (item)
+        this.todos = JSON.parse(item);
+  },
+  watch: {
+    todos: {
+      handler() {
+        localStorage.setItem("todos", JSON.stringify(this.todos));
+      },
+      deep: true
+    }
   }
 });
 
@@ -56,20 +69,16 @@ export default defineComponent ({
       width:  20px;
       background: none;
       border: none;
-      /* border-radius: 5px; */
       color: #ddfff7;
       font-weight: bold;
     }
 
     #app {
-      /* display: flex;
-      justify-content: center; */
       border-radius: 25px;
       background-color: #5f27cd;
       width: 35vw;
       min-height: 80vh;
       height: fit-content;
-      /* padding-bottom: 2vh; */
       min-width: 319px;
       box-shadow: 5px 5px 20px black;
     }
@@ -84,7 +93,5 @@ export default defineComponent ({
       #app {
         display: none;
       }
-
-
     }
 </style>
